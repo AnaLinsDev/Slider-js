@@ -2,31 +2,31 @@ const item = document.querySelector('.slideshow-container');
 var slides = document.getElementsByClassName("mySlides");
 var dots = document.getElementsByClassName("dot");
 var i;
-const image = [
-    {
-         "id":"Image One",
-         "img": "img1.jpg",
-         "numb":"1"
-    },
-    { 
-        "id":"Image Two",
-        "img": "img2.png",
-        "numb":"2"
-     },
-    {
-         "id":"Image Three",
-         "img": "img3.png",
-         "numb":"3"
-    }
+var image = [
+  {
+       "id":"Image One",
+       "img": "img1.jpg",
+       "numb":"1"
+  },
+  { 
+      "id":"Image Two",
+      "img": "img2.png",
+      "numb":"2"
+   },
+  {
+       "id":"Image Three",
+       "img": "img3.png",
+       "numb":"3"
+  }
 ]
-
 function showdata(image){
-for (info of image){
-    item.insertAdjacentHTML('beforeend', 
-    ` <div class="mySlides fade">
-        <div class="numbertext">${info.numb} / 3</div>
-        <img src="./images/${info.img}" alt="${info.id}">
-      </div>`)}}
+  image.map(inf =>
+      item.insertAdjacentHTML('beforeend', 
+      ` <div class="mySlides fade">
+          <div class="numbertext">${inf.numb} / 3</div>
+          <img src="./images/${inf.img}" alt="${inf.id}">
+        </div>`))}
+
 
 showdata(image)
 
